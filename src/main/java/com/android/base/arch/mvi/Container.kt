@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
+/** 修改自 [安卓 MVI 架构](https://juejin.cn/post/7106314229015117855)。*/
 interface Container<STATE : UIState, EVENT : UIEvent> {
 
     /** UI 状态 */
@@ -66,7 +67,6 @@ class ContainerLazy<STATE : UIState, EVENT : UIEvent>(initialState: STATE, corou
     override fun isInitialized() = cached != null
 
 }
-
 
 fun <STATE : UIState, Event : UIEvent> stateEventContainer(
     initialState: STATE,
